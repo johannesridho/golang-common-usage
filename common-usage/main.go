@@ -108,7 +108,7 @@ func convertBytesToObject(b []byte) Payload {
 func writeJSONToFile() {
 	payloads := generatePayloads()
 
-	file, err := os.Create("payloads.json")
+	file, err := os.Create("files/payloads.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -121,7 +121,7 @@ func writeJSONToFile() {
 }
 
 func writeToFile() {
-	file, err := os.Create("file")
+	file, err := os.Create("files/file")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -141,7 +141,7 @@ func writeToFile() {
 func writeToCSV() {
 	payloads := generatePayloads()
 
-	file, err := os.Create("payloads.csv")
+	file, err := os.Create("files/payloads.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
