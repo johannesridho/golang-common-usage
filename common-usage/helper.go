@@ -1,5 +1,15 @@
 package main
 
+type Payload struct {
+	Name string `json:"name"`
+	Job  string `json:"job"`
+}
+
+type Response struct {
+	ID        string `json:"id"`
+	CreatedAt string `json:"createdAt"`
+}
+
 func generatePayloads() []Payload {
 	payloads := []Payload{
 		{
