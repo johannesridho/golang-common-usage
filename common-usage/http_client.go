@@ -31,6 +31,9 @@ func sendPostRequest() {
 	// encode the payload
 	buf := &bytes.Buffer{}
 	err := json.NewDecoder(buf).Decode(&payload)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	req, err := http.NewRequest(http.MethodPost, "https://reqres.in/api/users", buf)
 	if err != nil {
