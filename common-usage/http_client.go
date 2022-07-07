@@ -30,7 +30,7 @@ func sendPostRequest() {
 
 	// encode the payload
 	buf := &bytes.Buffer{}
-	err := json.NewDecoder(buf).Decode(&payload)
+	err := json.NewEncoder(buf).Encode(&payload)
 	if err != nil {
 		log.Fatal(err)
 	}
