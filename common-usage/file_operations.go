@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"encoding/csv"
 	"encoding/json"
+	"fmt"
+	"io"
 	"log"
 	"os"
 	"strconv"
@@ -65,4 +67,19 @@ func writeToCSV() {
 			log.Fatal(err)
 		}
 	}
+}
+
+func readFile() {
+	file, err := os.Open("files/file")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	data, err := io.ReadAll(file)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(string(data))
 }

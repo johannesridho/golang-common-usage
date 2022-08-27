@@ -7,4 +7,5 @@ func main() {
 	writeJSONToFile()
 	writeToFile()
 	writeToCSV()
+	readFile()
 }
