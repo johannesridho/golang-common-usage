@@ -27,17 +27,20 @@ func (h *MinHeap) Pop() interface{} {
 	*h = (*h)[:len(*h)-1]
 	return v
 }
+func (h *MinHeap) Peek() int {
+	return (*h)[0]
+}
 
-func usingHeap() {
-	fmt.Println("--------------------------------")
-	fmt.Println("using heap")
-
+func main() {
 	h := MinHeap{}
 	heap.Push(&h, 1)
-	heap.Push(&h, 2)
 	heap.Push(&h, 3)
+	heap.Push(&h, 12)
+	heap.Push(&h, 10)
+	heap.Push(&h, 2)
 
 	for h.Len() != 0 {
+		fmt.Println("peek", h.Peek())
 		fmt.Println("pop", heap.Pop(&h))
 	}
 }
