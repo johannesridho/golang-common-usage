@@ -28,12 +28,14 @@ func (u *UnionFind) Union(s1, s2 string) {
 	// s2 = u.Find(s2)
 	// u.Root[s1] = s2
 
-	// union by rank, time O(log n)
+	// union by rank, time O(log n), this keeps the height as low as possible
 	s1 = u.Find(s1)
 	s2 = u.Find(s2)
 	if s1 == s2 {
 		return
 	}
+
+	// assign the lower rank to higher rank
 	if u.Rank[s1] > u.Rank[s2] {
 		u.Root[s2] = s1
 	} else if u.Rank[s1] < u.Rank[s2] {

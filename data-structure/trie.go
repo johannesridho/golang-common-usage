@@ -11,7 +11,7 @@ type Node struct {
 	Children map[rune]*Node
 }
 
-func Constructor() Trie {
+func NewTrie() Trie {
 	return Trie{
 		Root: &Node{
 			Children: make(map[rune]*Node),
