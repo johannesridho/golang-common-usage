@@ -1,5 +1,7 @@
 package main
 
+// when to use:
+//	- word search
 // example: https://leetcode.com/problems/implement-trie-prefix-tree
 
 type Trie struct {

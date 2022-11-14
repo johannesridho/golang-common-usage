@@ -1,5 +1,7 @@
 package main
 
+//when to use:
+//	- finding number of component groups / connected components
 // example: https://leetcode.com/problems/accounts-merge
 
 type UnionFind struct {
